@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv'
-import connectDB from './DB/ConnectDB.js';
+import connectDB from './DB/connectDB.js';
 // const medicineRoutes = require("./routes/medicineRoutes");
 import medicineRoutes from "./routes/MedicineRoutes.js";
 import RolesRoutes from "./routes/UserRoute.js";
