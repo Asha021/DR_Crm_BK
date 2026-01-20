@@ -3,8 +3,6 @@ import jwt from 'jsonwebtoken'
 import UserModel from '../models/UserModel.js';
 import Role from '../models/Role.js';
 
-
-
 export const authMiddleware = async (req, res, next) => {
   const token = req.headers.authorization?.split(' ')[1];
   if (!token) return res.status(401).json({ message: 'No token provided' });
@@ -21,20 +19,6 @@ export const authMiddleware = async (req, res, next) => {
   }
 };
 
-
-
-// export const authorize = (moduleName, action) => {
-//   return async (req, res, next) => {
-//     const user = await UserModel.findById(req.user.id).populate('role');
-//     const permissions = user.role?.permissions?.get(moduleName);
-
-//     if (permissions && permissions.includes(action)) {
-//       return next();
-//     }
-
-//     return res.status(403).json({ error: 'Access Denied' });
-//   };
-// };
 
 export const authorize = (moduleName, action) => {
   return async (req, res, next) => {

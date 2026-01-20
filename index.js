@@ -11,11 +11,12 @@ import AuthRoutes from "./routes/authRoutes.js";
 import TreatmentRoutes from "./routes/TreatmentRoutes.js";
 import http from 'http'
 import { Server } from 'socket.io';
+// import { seedUsers } from './models/seeders/userSeeder.js';
 dotenv.config();
 connectDB();
 
 const app = express();
-
+// seedUsers()
 // app.use(cors({
 //     origin:''
 // }))
